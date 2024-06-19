@@ -1,0 +1,183 @@
+@use "variable";
+
+
+.plan{
+   padding: 69px 0px 70px;
+   @include variable.mq(){
+      padding-top: 60px;
+      padding-bottom: 73px;
+   }
+}
+
+.plan-content{
+   background-color: variable.$lightblue;
+   padding: 59px 34px 39px;
+   margin-left: 100px;
+   margin-right: 100px;
+   margin-top: 64px;
+   @include variable.mq(){
+      margin: 48px 25px 0;
+      padding: 38px 17px 25px 28px;
+   }
+}
+.plan-list{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 42px 70px;
+   max-width: 1510px;
+   margin-left: auto;
+   margin-right: auto;
+   @include variable.mq(){
+      gap: 39px;
+   }
+}
+
+.plan-item{
+   position: relative;
+   max-width: 100%;
+   &::before{
+      position: absolute;
+      content: "";
+      width: 41px;
+      height: 41px;
+      top: -16px;
+      left: -13px;
+      z-index: 100;
+      @include variable.mq(){
+         width: 35px;
+         height: 35px;
+         left: -9px;
+
+      }
+   }
+   &:first-child{
+      &::before{
+         background-color: #D684B8;
+      }
+   }
+   &:nth-child(2){
+      &::before{
+         background-color: #84B6D6;
+      }
+   }
+   &:nth-child(3){
+      &::before{
+         background-color: variable.$orange;
+      }
+   }
+   &:nth-child(4){
+      &::before{
+         background-color: #D6BF84;
+      }
+   }
+   &:nth-child(5){
+      &::before{
+         background-color: variable.$green;
+      }
+   }
+}
+.plan-item a{
+   display: inline-block;
+   width: 342px;
+   height: 125px;
+   background-color: #fff;
+   display: flex;
+   position: relative;
+   @include variable.mq(){
+      width: 292px;
+      height: 107px;
+      max-width: 100%;
+   }
+
+   &:hover{
+      .plan-title{
+         color: #fff;
+         z-index: 50;
+
+      }
+      &::before, &::after{
+         background-color: #fff;
+         z-index: 50;
+      }
+      span{
+         &::before{
+            opacity: 0.49;
+         }
+      }
+   }
+
+   &::before{
+      position: absolute;
+      content: "";
+      width: 45px;
+      height: 1px;
+      background-color: variable.$gray;
+      bottom: 16px;
+      right: 18px;
+      transition: background-color .3s;
+   }
+   &::after{
+      position: absolute;
+      content: "";
+      width: 9.4px;
+      height: 1px;
+      background-color: variable.$gray;
+      bottom: 18px;
+      right: 16px;
+      transform: rotate(30deg);
+      transition: background-color .3s;
+   }
+
+   span{
+      position: relative;
+      display: flex;
+      width: 100%;
+      &::before{
+         position: absolute;
+         content: "";
+         width: 100%;
+         height: 100%;
+         top: 0;
+         left: 0;
+         background-color: #000;
+         opacity: 0;
+         transition: opacity .3s;
+ 
+      }
+      &::after{
+         position: absolute;
+         content: "";
+         width: calc(100% - 14px);
+         height: calc(100% - 14px);
+         border: 1px solid #fff;
+         top: 7px;
+         left: 7px;
+         z-index: 105;
+    
+      }
+   }
+}
+.plan-title{
+   text-align: center;
+   font-family: variable.$font2;
+   font-size: 20px;
+   line-height: 27px;
+   width: 175px;
+   margin-left: 6px;
+   margin-top: auto;
+   margin-bottom: auto;
+   color: variable.$gray;
+   transition: color .3s;
+   @include variable.mq(){
+      font-size: 16px;
+   }
+}
+.plan-img{
+   @include variable.mq(){
+      width: 106px;
+   }
+   img{
+      height: 100%;
+   }
+}

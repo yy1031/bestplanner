@@ -1,0 +1,131 @@
+@use "variable";
+
+.swiper2{
+   .swiper-slide, .swiper-slide-active, .swiper-slide-next{
+      width: 416px !important;
+      height: 430px;
+      background-color: #fff;
+      padding: 12px;
+      @include variable.mq(){
+         width: 294px !important;
+      }
+
+      .report-item{
+         width: 392px;
+         height: 408px;
+         border: 1px solid variable.$main-color;
+         padding: 12px;
+         @include variable.mq(){
+            width: 278px;
+            padding: 11px 8px;
+         }
+      }
+      margin-right: 16px;
+      .popular-readmore{
+         position: absolute;
+         bottom: 15px;
+         right: 15px;
+      }
+   }
+}
+.report-img{
+   @include variable.mq(){
+      height: 184px;
+      img{
+         height: 100%;
+      }
+   }
+}
+
+.report-text{
+   width: 332px;
+   height: 211px;
+   background-color: rgba(#fff, 0.88);
+   padding: 16px;
+   margin-top: -45px;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   @include variable.mq(){
+      width: 246px;
+      padding: 14px;
+   }
+}
+
+.report-title{
+   font-size: 18px;
+   line-height: 27px;
+   padding-bottom: 8px;
+   border-bottom: 1px solid variable.$gray;
+   margin-bottom: 8px;
+   font-family: variable.$font1;
+   @include variable.mq(){
+      font-size: 16px;
+   }
+
+}
+
+.report-ctg{
+   color: #fff;
+   padding: 2px 8px;
+   font-size: 12px;
+   line-height: 1.5;
+   letter-spacing: 0;
+   display: inline-block;
+   @include variable.mq(){
+      font-size: 10px;
+   }
+}
+
+.report-ctg-green{
+   background-color: variable.$green;
+}
+.report-ctg-orange{
+   background-color: variable.$orange;
+}
+
+.report-area{
+   font-size: 12px;
+   line-height: 1.5;
+   padding-left: 47px;
+   position: relative;
+   margin-top: 8px;
+   @include variable.mq(){
+      margin-top: 5px;
+   }
+   &::before{
+      position: absolute;
+      content: "エリア";
+      top: 0;
+      left: 0;
+      color: variable.$main-color;
+      border: 1px solid variable.$main-color;
+      padding: 3px;
+      line-height: 1;
+      font-weight: lighter;
+      font-size: 10px;
+      letter-spacing: 0;
+   }
+}
+
+.report-tags{
+   display: flex;
+   flex-wrap: wrap;
+   margin-top: 10px;
+   gap: 3px 8px;
+   @include variable.mq(){
+      margin-top: 5px;
+   }
+}
+
+.report-tag{
+   color: #fff;
+   background-color: variable.$main-color;
+   font-size: 12px;
+   line-height: 1.5;
+   letter-spacing: 0;
+   border-radius: 50px;
+   padding: 2px 6px 2px 4px;
+   border-radius: 45px;
+
+}

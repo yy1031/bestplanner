@@ -1,0 +1,29 @@
+@use "variable";
+
+.popular-inner-3{
+   padding: 64px 14px;
+   @include variable.mq(){
+      padding: 48px 0 48px 16px;
+   }
+   .inner-title{
+      margin-left: 116px;
+      @include variable.mq(tab){
+         margin-left: 40px;
+      }
+      @include variable.mq(){
+         margin-left: 0;
+      }
+   }
+}
+
+.swiper3{
+   overflow: hidden;
+   width: 100%;
+   position: relative;
+   .swiper-slide, .swiper-slide-active, .swiper-slide-next{
+      width: 345px !important;
+      @include variable.mq(){
+         width: 294px !important;
+      }
+   }
+}

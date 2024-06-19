@@ -1,0 +1,149 @@
+@use "variable";
+
+.about{
+   padding: 73px 0 70px;
+   background: url(../img/about-back.png) no-repeat center right;
+   @include variable.mq(){
+      background-size: 398px 215px;
+      padding: 61px 0 0;
+   }
+}
+
+.about-title{
+   text-align: center;
+   font-size: 36px;
+   line-height: 60px;
+   margin-top: 78px;
+   color: #202020;
+   font-family: variable.$font1;
+   letter-spacing: .1em;
+   @include variable.mq(tab){
+      font-size: 32px;
+   }
+   @include variable.mq(){
+      margin-top: 45px;
+      font-size: 21px;
+      line-height: 40px;
+   }
+   span{
+      color: variable.$main-color;
+      font-size: 48px;
+      margin-right: 3px;
+      @include variable.mq(){
+         font-size: 32px;
+      }
+   }
+}
+
+.about-content{
+   text-align: center;
+   margin-top: 56px;
+   font-size: 18px;
+   line-height: 40px;
+   letter-spacing: 0.05em;
+   color: #202020;
+   @include variable.mq(){
+      margin-top: 24px;
+      font-size: 16px;
+   }
+}
+
+.about-btn-title{
+   text-align: center;
+   span{
+      color: variable.$main-color;
+      font-size: 20px;
+      line-height: 1.5;
+      margin-top: 54px;
+      position: relative;
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      &::before{
+         position: absolute;
+         content: "";
+         width: 1px;
+         height: 40px;
+         background-color: variable.$main-color;
+         transform: rotate(-45deg);
+         top: -5px;
+         left: -30px;
+      }
+      &::after{
+         position: absolute;
+         content: "";
+         width: 1px;
+         height: 40px;
+         background-color: variable.$main-color;
+         transform: rotate(45deg);
+         top: -5px;
+         right: -30px;
+      }
+   }
+}
+
+.about-btn{
+   text-align: center;
+   margin-top: 8px;
+   a{
+      color: #fff;
+      background-color: variable.$main-color;
+      font-size: 20px;
+      width: 451px;
+      height: 62px;
+      line-height: 62px;
+      display: inline-block;
+      @include variable.mq(){
+         width: 322px;
+         max-width: 95%;
+      }
+   }
+}
+.about-imgs{
+   overflow: hidden;
+   display: flex;
+   width: 100vw;
+   height: 235px;
+   margin-top: 54px;
+   @include variable.mq(){
+      height: 110px;
+   }
+}
+.about-imgs-slider{
+   display: flex;
+   gap: 3px;
+   height: 100%;
+   margin-right: 3px;
+   &:first-child{
+      animation: loop 100s -50s linear infinite;
+   }
+
+   &:last-child{
+      animation: loop2 100s linear infinite;
+   }
+   img{
+      width: 235px;
+      height: 235px;
+      @include variable.mq(){
+         width: 110px;
+         height: 110px;
+      }
+   }
+}
+@keyframes loop {
+   0% {
+     transform: translateX(100%);
+   }
+   to {
+     transform: translateX(-100%);
+   }
+ }
+ 
+ @keyframes loop2 {
+   0% {
+     transform: translateX(0);
+   }
+   to {
+     transform: translateX(-200%);
+   }
+ }

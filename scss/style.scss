@@ -1,0 +1,349 @@
+@use "variable";
+@use "top";
+@use "reports";
+@use "swiper1";
+@use "swiper2";
+@use "about";
+@use "plan";
+@use "popular";
+@use "popular-ranking";
+@use "popular-byplan";
+@use "popular-new";
+@use "recommend";
+@use "pickup";
+@use "voice";
+@use "footer";
+@use "fixedmenu";
+@use "drawer";
+
+
+body{
+   color: #000;
+   font-family: variable.$font2;
+}
+
+a{
+   transition: opacity .3s;
+   &:hover{
+      opacity: 0.7;
+   }
+}
+
+.is-pc{
+   @include variable.mq(){
+      display: none;
+   }
+}
+.is-sp{
+   @include variable.mq(pc){
+      display: none;
+   }
+   @include variable.mq(tab){
+      display: none;
+   }
+}
+.section-title-en{
+   font-family: 'Lato', sans-serif;
+   font-size: 30px;
+   margin-left: 118px;
+   padding-right: 24px;
+   margin-right: 24px;
+   position: relative;
+   z-index: 10;
+   color: variable.$gray;
+   letter-spacing: 0.1em;
+
+   @include variable.mq(pc){
+      border-right: 1px solid variable.$main-color;
+   }
+   @include variable.mq(tab){
+      border-right: 1px solid variable.$main-color;
+      margin-left: 60px;
+      font-size: 24px;
+      padding-right: 16px;
+      margin-right: 16px;
+   }
+
+   @include variable.mq(){
+      font-size: 16px;
+      line-height: 21px;
+      padding-bottom: 4px;
+      margin-left: 26px;
+      display: inline-block;
+
+      &::after{
+         position: absolute;
+         width: 44px;
+         height: 1px;
+         content:"";
+         bottom: 0;
+         left: 0;
+         background-color: variable.$main-color;
+      }
+   }
+
+   &::before{
+      position: absolute;
+      content: "";
+      width: 35px;
+      height: 35px;
+      background-color: variable.$main-color;
+      top: -10px;
+      left: -15px;
+      z-index: -1;
+      @include variable.mq(){
+         width: 20px;
+         height: 20px;
+         top: -5px;
+         left: -9px;
+      }
+   }
+}
+.section-title-ja{
+   font-size: 20px;
+   line-height: 1.5;
+   font-family: variable.$font1;
+   @include variable.mq(tab){
+      font-size: 18px;
+   }
+   @include variable.mq(){
+      display: inline-block;
+      font-size: 16px;
+      margin-left: 26px;
+      margin-bottom: 4px;
+   }
+}
+
+.heart{
+   position: relative;
+
+   &::before{
+      position: absolute;
+      content: "";
+      text-align: center;
+      width: 26px;
+      height: 26px;
+      background-color: rgba(117, 118, 118, 0.67);
+      top: 26px;
+      right: 26px;
+      border-radius: 100px;
+   }
+   &::after{
+      position: absolute;
+      content: url(../img/heart.png);
+      text-align: center;
+      width: 26px;
+      height: 26px;
+      top: 32px;
+      right: 26px;
+      border-radius: 100px;
+   }
+}
+
+.btn{
+   text-align: center;
+   margin-top: 64px;
+   max-width: 100%;
+   @include variable.mq(){
+      margin-top: 48px;
+   }
+   @media screen and (max-width:375px){
+      font-size: 14px;
+   }
+   a{
+      text-align: left;
+      display: inline-block;
+      padding: 0 115px 0 24px;
+      height: 62px;
+      line-height: 62px;
+      color: #fff;
+      background-color: variable.$gray;
+      font-family: variable.$font1;
+      position: relative;
+      transition: all .3s;
+
+      @include variable.mq(){
+         padding-top: 16px;
+         padding-bottom: 16px;
+         padding-left: 24px;
+         line-height: 1.5;
+         height: auto;
+      }
+      @media screen and (max-width:375px){
+         padding-right: 80px;
+      }
+
+      &:hover{
+         background-color: #fff;
+         border: 1px solid variable.$gray;
+         color: variable.$gray;
+         opacity: 1;
+         &::before,&::after{
+            background-color: variable.$gray;
+         }
+      }
+
+      &::before{
+         position: absolute;
+         content: "";
+         width: 27px;
+         height: 1px;
+         background-color: #fff;
+         top: 50%;
+         transform: translateY(-50%);
+         right: 24px;
+      }
+      &::after{
+         position: absolute;
+         content: "";
+         width: 12px;
+         height: 1px;
+         background-color: #fff;
+         top: calc(50% - 2.3px);
+         transform: rotate(30deg);
+         right: 23px;
+      }
+   }
+}
+
+.insta-gallery{
+   margin: 64px 130px 72px;
+   display: flex;
+   gap: 35px;
+   flex-wrap: wrap;
+   @include variable.mq(tab){
+      margin: 64px 60px 72px;
+      gap: 24px;
+   }
+   @include variable.mq(){
+      margin: 19px 39px 88px;
+      gap: 24px;
+   }
+}
+.insta-img{
+   width: calc((100% - 105px) / 4);
+   @include variable.mq(){
+      width: calc((100% - 48px) / 3);
+   }
+}
+
+.search-window{
+   width: 100%;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 700;
+}
+
+.search-window-overlay{
+   background-color: rgba(#000, 0.5);
+   width: 100%;
+   height: 100%;
+}
+.search-plan,
+.search-area{
+   display: none;
+   &.opened{
+      display: block;
+   }
+}
+
+.search-list{
+   width: 750px;
+   height: 302px;
+   background-color: #fff;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+ 
+   @include variable.mq(){
+      display: block;
+      width: 344px;
+      height: 434px;
+
+   }
+   li{
+
+      a{
+         font-size: 16px;
+         line-height: 1.5;
+         position: relative;
+         display: inline-block;
+         width: 100%;
+         height: 100%;
+         &::after{
+            position: absolute;
+            content: "";
+            width: 45px;
+            height: 1px;
+            background-color: variable.$gray;
+            top: 50%;
+            right: 0;
+         }
+         &::before{
+            position: absolute;
+            content: "";
+            width: 9.5px;
+            height: 1px;
+            background-color: variable.$gray;
+            top: calc(50% - 2.3px);
+            right: 0;
+            transform: rotate(30deg);
+         }
+      }
+   }
+}
+.search-list-area{
+   padding: 45px 53px;
+   border: 1px solid variable.$main-color;
+   @include variable.mq(){
+      padding: 48px 32px;
+      height: 479px;
+   }
+
+   li{
+      width: 280px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid variable.$main-color;
+   }
+}
+.search-list-plan{
+   padding: 25px 61px;
+   border: 1px solid variable.$gray;
+   @include variable.mq(){
+      padding: 16px 32px 0;
+   }
+
+   li{
+      height: 89px;
+      width: 276px;
+      @include variable.mq(){
+         height: 80px;
+      }
+      &:not(:last-child){
+         border-bottom: 1px solid variable.$gray;
+      }
+      a{
+         display: flex;
+         img{
+            width: 64px;
+            height: 64px;
+            margin-top: 12px;
+            @include variable.mq(){
+               margin-top: 8px;
+            }
+         }
+         span{
+            margin-left: 14px;
+            margin-top: auto;
+            margin-bottom: auto;
+         }
+      }
+   }
+}

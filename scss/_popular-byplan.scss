@@ -1,0 +1,181 @@
+@use "variable";
+
+
+.popular-inner-2{
+   background-color: #fff;
+   margin: 58px 60px 0;
+   padding: 64px 20px;
+   @include variable.mq(tab){
+      margin-left: 30px;
+      margin-right: 30px;
+   }
+   @include variable.mq(){
+      padding: 49px 10px;
+      margin: 64px 24px 0;
+   }
+   .inner-title{
+      margin-left: 50px;
+      @include variable.mq(tab){
+         margin-left: 0;
+      }
+      @include variable.mq(){
+         margin-left: 8px;
+         line-height: 1.5;
+      }
+   }
+}
+.popular-byplan{
+   background-color: variable.$lightblue;
+   margin-top: 64px;
+   padding: 65px 20px 84px;
+   @include variable.mq(){
+      margin-top: 24px;
+      padding: 31px 20px;
+   }
+   @media screen and (max-width:375px){
+      padding-left: 10px;
+      padding-right: 10px;
+   }
+}
+.popular-byplan-list{
+   display: flex;
+   justify-content: space-around;
+   gap: 16px;
+   @include variable.mq(tab){
+      flex-wrap: wrap;
+   }
+   @include variable.mq(){
+      display: block;
+   }
+}
+.popular-byplan-item{
+   width: 345px;
+   @include variable.mq(){
+      width: 100%;
+   }
+}
+
+.byplan-title{
+   height: 62px;
+   text-align: center;
+   margin-bottom: 8px;
+   h4{
+      display: inline-block;
+      text-align: left;
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: 0;
+      position: relative;
+      z-index: 1;
+      font-family: variable.$font1;
+      &::after{
+         position: absolute;
+         content: "";
+         width: 30px;
+         height: 30px;
+         top: 50%;
+         left: -15px;
+         transform: translateY(-50%);
+         z-index: -1;
+         background-color: #D684B8;
+
+      }
+   }
+   
+   &.-pink{
+      line-height: 62px;
+   }
+   &.-orange{
+      line-height: 62px;
+      h4::after{
+         background-color: variable.$orange;
+      }
+   }
+   &.-green{
+      padding-top: 3px;
+      padding-left: 3px;
+      h4::after{
+         background-color: variable.$green;
+      }
+   }
+}
+
+.report-card{
+   width: 100%;
+   background-color: #fff;
+   padding: 20px 23px 30px;
+   position: relative;
+   @include variable.mq(){
+      height: 477px;
+      padding: 21px 17px 25px;
+      margin-bottom: 16px;
+   }
+   @media screen and (max-width:375px){
+      height: 440px;
+   }
+
+   .popular-planner{
+      margin: 28px 0;
+      @include variable.mq(){
+         position: absolute;
+         bottom: 25px;
+         margin: 0;
+      }
+   }
+   .popular-readmore{
+      text-align: right;
+      @include variable.mq(){
+         display: none;
+      }
+      a{
+         text-align: left;
+      }
+   }
+
+   &::after{
+      position: absolute;
+      width: calc(100% - 20px);
+      height: calc(100% - 18px);
+      top: 9px;
+      left: 10px;
+      content: "";
+      border: 1px solid variable.$main-color;
+   }
+    
+}
+.report-card-img{
+   @include variable.mq(){
+      height: 184px;
+      img{
+         height: 100%;
+      }
+   }
+}
+.report-card-text{
+   @include variable.mq(){
+      background-color: rgba(#fff, 0.88);
+      position: absolute;
+      top: 173px;
+      padding: 14px;
+      width: calc(100% - 48px);
+      left: 50%;
+      transform: translateX(-50%);
+   }
+   @media screen and (max-width:375px){
+      padding: 8px;
+   }
+}
+.report-card-title{
+   font-size: 18px;
+   line-height: 27px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   @include variable.mq(){
+      font-size: 16px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid variable.$gray;
+   }
+   @media screen and (max-width:375px){
+      font-size: 14px;
+   }
+}

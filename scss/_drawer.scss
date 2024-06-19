@@ -1,0 +1,211 @@
+@use "variable";
+
+.drawer{
+   position: fixed;
+   z-index: 300;
+   background-color: variable.$lightblue;
+   padding: 30px;
+   width: 100%;
+   height: 100vh;
+   transform: translateX(110%);
+   transition: all .5s;
+   
+   @include variable.mq(){
+      padding: 8px 10px;
+      text-align: center;
+   }
+   &.opened{
+      transform: translateX(0);
+   }
+}
+.drawer-content{
+   background-color: #fff;
+   font-family: variable.$font1;
+   height: 100%;
+   @include variable.mq(){
+      padding: 17px 0;
+   }
+}
+.drawer-icon-close{
+   width: 56px;
+   height: 56px;
+   background-color: variable.$main-color;
+   position: absolute;
+   top: 54px;
+   right: 54px;
+   cursor: pointer;
+   transition: opacity .3s;
+   @include variable.mq(){
+      top: 46px;
+      right: 46px;
+   }
+   @include variable.mq(){
+      width: 46px;
+      height: 46px;
+      top: 18px;
+      right: 20px;
+   }
+   &:hover{
+      opacity: 0.7;
+   }
+   &::before,
+   &::after{
+      position: absolute;
+      content: "";
+      width: 54px;
+      height: 1px;
+      background-color: #fff;
+      top: 27px;
+      left: 1px;
+      @include variable.mq(){
+         width: 40px;
+         top: 23px;
+         left: 3px;
+      }
+   }
+   &::before{
+      transform: rotate(45deg);
+   }
+   &::after{
+      transform: rotate(-45deg);
+   }
+}
+
+.drawer-logo{
+   width: 302px;
+   height: 140px;
+   margin-bottom: 60px;
+   @include variable.mq(tab){
+      width: 260px;
+      height: 80px;
+      margin-bottom: 32px;
+   }
+   @include variable.mq(){
+      width: 154px;
+      height: 54px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 32px;
+   }
+   img{
+      height: 100%;
+   }
+}
+.drawer-nav{
+   display: flex;
+   padding: 0 82px;
+   // height: 546px;
+   margin-bottom: 54px;
+   @include variable.mq(){
+      display: block;
+      padding: 0;
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+      width: 200px;
+   }
+}
+.drawer-nav-left,
+.drawer-nav-right{
+   width: 50%;
+   @include variable.mq(){
+      width: 100%;
+      padding: 0;
+   }
+   li{
+      margin-top: 32px;
+      @include variable.mq(tab){
+         margin-top: 24px;
+      }
+      @include variable.mq(){
+         margin-top: 24px;
+      }
+      a{
+         font-size: 24px;
+         line-height: 1.5;
+         @include variable.mq(tab){
+            font-size: 20px;
+         }
+         @include variable.mq(){
+            font-size: 18px;
+         }
+      }
+   }
+}
+.drawer-nav-left{
+   border-right: 1px solid variable.$gray;
+   padding-right: 90px;
+   ul{
+      margin-left: auto;
+      width: 216px;
+   }
+
+   @include variable.mq(pc){
+      padding-bottom: 200px;
+   }
+   @include variable.mq(tab){
+      padding-right: 50px;
+   }
+   @include variable.mq(){
+      border: none;
+   }
+}
+.drawer-nav-right{
+   @include variable.mq(pc){
+      padding-left: 90px;    
+   }
+   @include variable.mq(tab){
+      padding-left: 50px;
+   }
+
+}
+.drawer-btn{
+   text-align: left !important;
+   margin-top: 36px !important;
+   width: 216px;
+   margin-left: auto;
+   @include variable.mq(){
+      margin-top: 46px;
+      a{
+         padding-right: 112px !important;
+      }
+   }
+}
+   
+
+.drawer-bottom{
+   position: absolute;
+   bottom: 56px;
+   right: 200px;
+   @include variable.mq(tab){
+      right: 110px;
+   }
+   @include variable.mq(){
+      bottom: 24px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 100%;
+   }
+   ul{
+      justify-content: flex-end;
+      display: flex;
+      @include variable.mq(){
+         justify-content: center;
+      }
+      li{
+         &:not(:first-child){
+            margin-left: 24px;
+            @include variable.mq(){
+               margin-left: 16px;
+            }
+         }
+         a{
+            font-size: 18px;
+            line-height: 27px;
+            @include variable.mq(){
+               font-size: 14px;
+            }
+         }
+      }
+   }
+}

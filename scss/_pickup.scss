@@ -1,0 +1,166 @@
+@use "variable";
+
+.pickup{
+   background-color: variable.$lightblue;
+   padding-top: 73px;
+   padding-bottom: 128px;
+   @include variable.mq(){
+      padding-top: 109px;
+   }
+}
+
+.pickup-inner{
+   background-color: #fff;
+   margin: 64px 100px 0 100px;
+   padding: 36px 20px 36px 20px;
+   @include variable.mq(tab){
+      margin-left: 32px;
+      margin-right: 32px;
+   }
+   @include variable.mq(){
+      margin: 24px 26px 0 26px;
+      padding: 48px 24px;
+   }
+}
+
+.pickup-list{
+   display: flex;
+   @include variable.mq(){
+      display: block;
+   }
+}
+.pickup-item{
+   width: calc(100% / 3);
+   @include variable.mq(){
+      width: 100%;
+      & + & {
+         margin-top: 48px;
+      }
+      &:not(:last-child){
+         padding-bottom: 48px;
+      }
+   }
+}
+.pickup-item2{
+   position: relative;
+
+   &::before{
+      @include variable.mq(pc){
+         position: absolute;
+         content: "";
+         height: 70%;
+         width: 1px;
+         background-color: variable.$gray;
+         left: 0;
+         top: 70px;
+      }
+      @include variable.mq(tab){
+         position: absolute;
+         content: "";
+         height: 70%;
+         width: 1px;
+         background-color: variable.$gray;
+         left: 0;
+         top: 70px;
+      }
+      @include variable.mq(){
+         position: absolute;
+         width: 75%;
+         height: 1px;
+         content: "";
+         background-color: variable.$gray;
+         top: -48px;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+   }
+
+   &::after{
+      @include variable.mq(pc){
+         position: absolute;
+         content: "";
+         height: 70%;
+         width: 1px;
+         background-color: variable.$gray;
+         right: 0;
+         top: 70px;
+      }
+      @include variable.mq(tab){
+         position: absolute;
+         content: "";
+         height: 70%;
+         width: 1px;
+         background-color: variable.$gray;
+         right: 0;
+         top: 70px;
+      }
+      @include variable.mq(){
+         position: absolute;
+         width: 75%;
+         height: 1px;
+         content: "";
+         background-color: variable.$gray;
+         bottom: 0;
+         left: 50%;
+         transform: translateX(-50%);
+      }
+   }
+}
+.pickup-title{
+   font-size: 20px;
+   text-align: center;
+   font-family: variable.$font1;
+   margin-bottom: 40px;
+   span{
+      position: relative;
+      &::before{
+         position: absolute;
+         content: "";
+         width: 1px;
+         height: 30px;
+         top: 0;
+         left: -60px;
+         transform: rotate(-30deg);
+         background-color: variable.$main-color;
+         @include variable.mq(tab){
+            left: -27px;
+         }
+      }
+      &::after{
+         position: absolute;
+         content: "";
+         width: 1px;
+         height: 30px;
+         top: 0;
+         right: -60px;
+         transform: rotate(30deg);
+         background-color: variable.$main-color;
+         @include variable.mq(tab){
+            right: -27px;
+         }
+      }
+   }
+
+}
+.pickup-tags{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+   margin:0  10px 0 25px;
+   @include variable.mq(){
+      margin: 0;
+   }
+}
+.pickup-tag{
+   color: #fff;
+   background-color: #84D6D6;
+   font-size: 16px;
+   line-height: 1.5;
+   letter-spacing: 0;
+   border-radius: 50px;
+   padding: 4px 8px;
+   border-radius: 45px;
+   @include variable.mq(tab){
+      font-size: 14px;
+   }
+}

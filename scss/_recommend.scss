@@ -1,0 +1,223 @@
+@use "variable";
+
+.swiper-sp2{
+   overflow: hidden;
+    width: 100%;
+    position: relative;
+    .swiper-button-next,.swiper-button-prev{
+       background-color: rgba(variable.$gray, 0.35);
+         @include variable.mq(pc){
+            display: none;
+         }
+    }
+
+}
+.recommend{
+   padding-top: 73px ;
+   padding-bottom: 66px;
+   background-color: #fff;
+   @include variable.mq(){
+      padding-top: 69px;
+      padding-bottom: 128px;
+   }
+   
+}
+.recommend-inner{
+   margin: 60px 100px;
+   @include variable.mq(tab){
+      margin: 60px 60px;
+   }
+   @include variable.mq(){
+      margin: 24px 0 50px 16px;
+   }
+   .inner-title{
+      margin-left: 0;
+   }
+}
+.recommend-inner2{
+   @include variable.mq(){
+      margin: 0;
+      .inner-title{
+         margin-left: 16px;
+      }
+   }
+}
+
+.planner-ranking.swiper-wrapper{
+   margin-top: 32px;
+   display: flex;
+   gap: 20px;
+   @include variable.mq(){
+      gap: 0;
+      margin-top: 24px;
+   }
+}
+
+.planner-ranking-item.swiper-slide{
+   width: 397px;
+   padding: 35px 15px 30px;
+   background-color: variable.$lightblue;
+   position: relative;
+   @include variable.mq(){
+      width: 294px !important;
+      padding: 35px 8px;
+   }
+
+   .popular-rank{
+      left: 15px;
+   }
+}
+.plannner-ranking-profile{
+   display: flex;
+   margin-bottom: 19px;
+}
+.planner-ranking-profile-left{
+   width: calc(140 / 397 * 100%);
+   @include variable.mq(){
+      width: calc(134 / 297 * 100%);
+
+   }
+}
+.planner-ranking-img{
+   @include variable.mq(){
+      height: 164px;
+      img{
+         height: 100%;
+      }
+   }
+}
+.planner-ranking-name{
+   font-size: 24px;
+   margin-top: 9px;
+   margin-bottom: 5px;
+   font-family: variable.$font1;
+   @include variable.mq(){
+      font-size: 20px;
+   }
+}
+.planner-ranking-company{
+   font-size: 12px;
+}
+.planner-ranking-profile-right{
+   width: calc(257 / 397 * 100%);
+   margin-left: 8px;
+   @include variable.mq(){
+      width: calc(157 / 297 * 100%);
+   }
+   .planner-area{
+      padding-left: 0;
+      padding-top: 25px;
+      font-size: 13px;
+      @include variable.mq(){
+         font-size: 12px;
+      }
+      &::before{
+         top: 0;
+         background-color: #fff;
+      }
+   }
+}
+.planner-ranking-title{
+   font-family: variable.$font1;
+   font-size: 18px;
+   line-height: 1.5;
+   margin-bottom: 20px;
+   @include variable.mq(){
+      font-size: 16px;
+      margin-top: 18px;
+   }
+}
+
+.planner-ranking-point{
+   background-color: #fff;
+   padding: 10px 0 10px 40px;
+   display: flex;
+   @include variable.mq(){
+      display: block;
+      margin-top: 8px;
+   }
+   ul{
+      padding-left: 27px;
+      @include variable.mq(){
+         padding-left: 0;
+      }
+      li{
+         font-size: 14px;
+         line-height: 2;
+         list-style-type: disc;
+      }
+   }
+}
+.planner-ranking-point-title{
+   font-family: variable.$font1;
+   position: relative;
+   font-size: 12px;
+   margin-top: 6.5px;
+   &::after{
+      position: absolute;
+      content: "";
+      width: 14px;
+      height: 14px;
+      left: -16px;
+      top: 0;
+      background: url(../img/icon_point.svg) no-repeat center center / cover;
+   }
+}
+
+.planner-ranking-photos{
+   display: flex;
+   gap:16px;
+   margin-top: 8px;
+   img{
+      width: 47%;
+   }
+}
+
+.planner-ranking-photo-title{
+   font-family: variable.$font1;
+   position: relative;
+   font-size: 12px;
+   margin-top: 16px;
+   padding-left: 17px;
+   &::after{
+      position: absolute;
+      content: "";
+      width: 15px;
+      height: 15px;
+      left: 0;
+      top: 1px;
+      background: url(../img/icon_camera.svg) no-repeat center center / cover;
+   }
+}
+
+.recommend-swiper{
+   background-color: variable.$lightblue;
+   padding: 49px 0 43px;
+   margin-top: 32px;
+}
+.swiper4{
+   position: relative;
+   overflow: hidden;
+   .swiper-slide, .swiper-slide-active, .swiper-slide-next{
+      width: 397px !important;
+      background-color: #fff;
+      padding: 30px;
+      @include variable.mq(){
+         width: 297px !important;
+         padding: 24px 8px;
+      }
+      .planner-ranking-point{
+         background-color: rgba(variable.$gray, 0.14);
+      }
+   }
+
+   .swiper-button-prev,
+   .swiper-button-next{
+      background-color: rgba(variable.$gray, 0.35);
+   }
+   @include variable.mq(){
+      .swiper-wrapper{
+         margin-left: 16px;
+      }
+   }
+}

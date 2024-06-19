@@ -1,0 +1,87 @@
+@use "variable";
+
+
+.popular{
+   background-color: #F4F4F4;
+   padding-top: 73.5px;
+}
+
+.popular-inner{
+   .inner-title{
+      margin-left: 0;
+      margin-bottom: 25px;
+   }
+}
+
+
+.popular-readmore{
+   margin-top: auto;
+   a{
+      text-align: left;
+      display: inline-block;
+      color: variable.$gray;
+      font-family: variable.$font3;
+      font-size: 16px;
+      letter-spacing: .1em;
+      line-height: 22px;
+      padding-right: 35px;
+      border-bottom: 1px solid variable.$gray;
+      position: relative;
+      &::after{
+         position: absolute;
+         content: "";
+         width: 18.8px;
+         height: 1px;
+         background-color: variable.$gray;
+         transform: rotate(30deg);
+         right: -1px;
+         bottom: 4px;
+      }
+      @include variable.mq(){
+         font-size: 14px;
+      }
+   }
+
+}
+
+
+
+
+.popular-planner{
+   display: flex;
+   padding-left: 7px;
+   position: relative;
+   &::after{
+      position: absolute;
+      content: "";
+      width: 19px;
+      height: 19px;
+      background-color: variable.$main-color;
+      top: -4px;
+      left: 0;
+   }
+}
+.popular-planner-img{
+   width: 68px;
+   height: 65px;
+}
+.popular-planner-text{
+   padding-top: 10px;
+   padding-left: 16px;
+   line-height: 1.5;
+}
+.popular-planner-title{
+   color: variable.$gray;
+   font-size: 10px;
+}
+.popular-planner-name{
+   font-size: 16px;
+}
+.popular-planner-company{
+   font-size: 12px;
+}
+
+.popular-btn{
+   max-width: calc(100% - 32px) !important;
+
+}

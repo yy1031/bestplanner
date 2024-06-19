@@ -1,0 +1,104 @@
+@use "variable";
+
+.reports{
+   background-color: variable.$lightblue;
+   padding: 73px 0;
+   @include variable.mq(){
+      padding: 69px 0 21px 16px;
+   }
+}
+
+.reports-inner{
+   margin-top: 65px;
+   overflow: hidden;
+}
+.inner-title{
+   font-size: 20px;
+   margin-left: 130px;
+   padding-left: 16px;
+   position: relative;
+   font-family: variable.$font1;
+
+   @include variable.mq(tab){
+      margin-left: 60px;
+   }
+
+   @include variable.mq(){
+      margin-left: 32px;
+      font-size: 16px;
+   }
+   span{
+      font-size: 24px;
+      color: variable.$main-color;
+      margin-right: 8px;
+      letter-spacing: 0.1em;
+      @include variable.mq(){
+         font-size: 16px;
+      }
+   }
+
+   &::before{
+      position: absolute;
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: #d9d9d9;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+   }
+}
+
+.swiper1, .swiper2{
+   margin-top: 24px;
+   position: relative;
+   overflow: hidden;
+}
+
+
+.swiper-button-next{
+   width: 40px;
+   height: 40px;
+   background-color: rgba(variable.$main-color, 0.6);
+   border-radius: 100px;
+   @include variable.mq(){
+      width: 26px;
+      height: 26px;
+   }
+
+   &::before{
+      position: absolute;
+      content: "";
+      width: 6px;
+      height: 11px;
+      background: url(../img/arrow.png) center center / contain;
+   }
+
+   &::after{
+      display: none;
+   }
+}
+
+.swiper-button-prev{
+   width: 40px;
+   height: 40px;
+   background-color: rgba(variable.$main-color, 0.6);
+   border-radius: 100px;
+   @include variable.mq(){
+      width: 26px;
+      height: 26px;
+   }
+
+   &::before{
+      position: absolute;
+      content: "";
+      width: 6px;
+      height: 11px;
+      background: url(../img/arrow.png) center center / contain;
+      transform: rotate(180deg);
+   }
+
+   &::after{
+      display: none;
+   }
+}

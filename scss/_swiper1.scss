@@ -1,0 +1,114 @@
+@use "variable";
+
+
+.swiper1{
+
+   .swiper-slide{
+      width: 490px !important;
+      height: 160px;
+      display: flex;
+      background-color: #fff;
+      line-height: 1.5;
+      position: relative;
+      @include variable.mq(){
+         width: 371px !important;
+         max-width: 95%;
+         height: 116px;
+      }
+      &::after{
+         position: absolute;
+         content: "";
+         width: calc(100% - 14px);
+         height: calc(100% - 14px);
+         border: 1px solid #fff;
+         top: 7px;
+         left: 7px;
+         @include variable.mq(){
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            top: 5px;
+            left: 5px;
+         }
+      }
+   }
+}
+
+
+.planner-img{
+   width: 158px;
+   height: 160px;
+   @include variable.mq(){
+      width: 30.7%;
+   }
+   img{
+      height: 100%;
+   }
+}
+
+.planner-text{
+   width: 332px;
+   padding: 15px 33px 37px;
+   position: relative;
+
+   @include variable.mq(){
+      width: 69.3%;
+      padding: 11px 8px;
+   }
+   &::after{
+      position: absolute;
+      content: url(../img/Star.png);
+      text-align: center;
+      width: 26px;
+      height: 26px;
+      background-color: rgba(variable.$gray, 0.67);
+      top: 16px;
+      right: 16px;
+      border-radius: 100px;
+   }
+}
+
+.planner-name{
+   font-size: 22px;
+   font-family: variable.$font1;
+   @include variable.mq(){
+      font-size: 16px;
+   }
+}
+.planner-title{
+   font-size: 12px;
+   border-bottom: 0.5px solid variable.$gray;
+   padding-bottom: 8px;
+   margin-bottom: 16px;
+   letter-spacing: 0;
+   font-family: variable.$font2;
+   @include variable.mq(){
+      padding-bottom: 7px;
+      margin-bottom: 4px;
+   }
+}
+
+.planner-area{
+   font-size: 12px;
+   padding-left: 53px;
+   letter-spacing: 0;
+   position: relative;
+   font-family: variable.$font2;
+   line-height: 2;
+   @include variable.mq(){
+      font-size: 10px;
+      line-height: 1.5;
+      padding-left: 45px;
+   }
+   &::before{
+      position: absolute;
+      content: "エリア";
+      top: 3px;
+      left: 0;
+      color: variable.$main-color;
+      border: 1px solid variable.$main-color;
+      padding: 3px;
+      line-height: 1;
+      font-weight: lighter;
+      font-size: 10px;
+   }
+}

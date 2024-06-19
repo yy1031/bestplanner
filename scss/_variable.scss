@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Zen+Maru+Gothic&display=swap');
+
+$main-color: #84D6D6;
+$lightblue: #EEF9F8;
+$orange: #F1B04E;
+$green: #ABD07B;
+$gray: #757676;
+
+$font1: 'Zen Maru Gothic', sans-serif;
+$font2: 'YuGothic', sans-serif;
+$font3:'Lato', sans-serif;
+
+$breakpoints: (
+  'sp': "(max-width: 767px)", 
+  'tab': "(min-width: 768px) and (max-width: 1279px)", 
+  'pc': "(min-width: 1280px)"
+) !default;
+
+@mixin mq($breakpoint: sp) {
+		@media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

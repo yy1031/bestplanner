@@ -1,0 +1,143 @@
+@use "variable";
+
+footer{
+   background-color: #f7f7f7;
+   padding-top: 48px;
+}
+.footer-flex{
+   display: flex;
+   justify-content: space-between;
+   padding-bottom: 64px;
+   border-bottom: 1px solid variable.$gray;
+   margin: 0 100px;
+   @include variable.mq(tab){
+      margin: 0 45px;
+   }
+   @include variable.mq(){
+      margin: 0 30px;
+   }
+
+}
+
+.footer-logo{
+   width: 229px;
+   height: 119px;
+   margin-bottom: 22px;
+   @include variable.mq(){
+      width: 116px;
+      height: 32px;
+   }
+   img{
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+.footer-sns{
+   text-align: center;
+   span{
+      font-size: 16px;
+      line-height: 1.5;
+      font-family: variable.$font3;
+      color: variable.$gray;
+      @include variable.mq(){
+         font-size: 12px;
+      }
+   }
+}
+.footer-sns-list{
+   margin-top: 8px;
+   display: flex;
+   gap: 16px;
+   justify-content: center;
+   @include variable.mq(){
+      gap: 9px;
+   }
+   li{
+      width: 20px;
+      height: 20px;
+      @include variable.mq(){
+         width: 18px;
+         height: 18px;
+      }
+   }
+}
+
+.footer-right{
+   width: 520px;
+   margin-right: 64px;
+   margin-top: 24px;
+   @include variable.mq(tab){
+      margin-right: 0;
+      margin-left: 32px;
+   }
+   @include variable.mq(){
+      margin-right: 0;
+      width: 134px;
+   }
+}
+.footer-nav{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 24px;
+   @include variable.mq(){
+      display: block;
+   }
+   li{
+      font-family: variable.$font1;
+      line-height: 1.5;
+      @include variable.mq(){
+         font-size: 12px;
+         &:not(:first-child){
+            margin-top: 8px;
+         }
+      }
+   }
+}
+.footer-bottom{
+   padding: 24px 64px 24px 0px;
+   margin: 0 100px;
+   @include variable.mq(tab){
+      margin: 0 45px;
+   }
+   @include variable.mq(){
+      padding: 16px 0;
+      margin: 0 30px;
+   }
+   ul{
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 24px;
+      @include variable.mq(){
+         font-size:  11px;
+         justify-content: center;
+         gap: 16px;
+      }
+      li{
+         font-family: variable.$font1;
+         line-height: 1.5;
+      }
+   }
+}
+
+.footer-copyright{
+   text-align: center;
+   padding: 9px 30px 8px 30px;
+   font-family: variable.$font3;
+   font-size: 12px;
+   line-height: 14px;
+   background-color: variable.$main-color;
+   color: #fff;
+   p{
+      margin-bottom: 8px;
+      &:first-child{
+         font-size: 10px;
+      }
+
+      &:nth-child(2){
+         font-size: 7px;
+      }
+   }
+}
